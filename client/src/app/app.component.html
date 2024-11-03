@@ -1,0 +1,19 @@
+
+<!-- <app-add-customer/>
+<app-add-receipt></app-add-receipt>
+<app-add-expense></app-add-expense>
+<app-revenues-and-expenses ></app-revenues-and-expenses>
+<app-by-customr-id [customerId]="3"></app-by-customr-id> -->
+<!-- <button><a href="">רישום הוצאה</a></button>
+<button><a>רישום הכנסה</a></button>
+<button><a>דוחות</a></button> -->
+<h1>Bookeeping</h1>
+<nav>
+    <ul>
+        <li><a routerLink="/add-receipt" routerLinkActive="active" ariaCurrentWhenActive="page">write a revenues</a></li>
+        <li><a routerLink="/add-expense" routerLinkActive="active" ariaCurrentWhenActive="page">write an expense</a></li>
+        <li><a routerLink="/reports" routerLinkActive="active" ariaCurrentWhenActive="page">reports</a></li>
+
+    </ul>
+</nav>
+<router-outlet />

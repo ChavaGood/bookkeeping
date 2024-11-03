@@ -1,0 +1,37 @@
+<h1>add-receipt </h1>
+<form [formGroup]="receiptForm" (ngSubmit)="onSubmit()">
+  <p>
+    <label>Date:</label>
+    <input type="date" formControlName="date" required>
+  </p>
+  <p>
+    <label>Sum:</label>
+    <input type="number" formControlName="sum" required>
+  </p>
+    <p>
+    <label>Payment Method:</label>
+    <select formControlName="paymentMethod">
+      <option value="cash">Cash</option>
+      <option value="credit">Credit</option>
+      <option value="bank_transfer">Bank Transfer</option>
+    </select>
+      </p>
+    <p>
+    <label>Choose Customer:</label>
+    <select formControlName="customer">
+      <option *ngFor="let customer of customers" [value]="customer.id">{{ customer.name }}</option>
+    </select>
+    <button class="addCustomer" (click)="addCustomer()" >add customer</button>
+    </p>
+    <p>
+      <label>Details:</label>
+      <textarea formControlName="details"></textarea>
+      </p>
+    <p>
+    <button type="submit" [disabled]="receiptForm.invalid">Submit</button>
+    </p>
+  </form>
+
+
+  <app-add-customer *ngIf="add_customer" ></app-add-customer>
+  

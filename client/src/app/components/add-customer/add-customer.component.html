@@ -1,0 +1,27 @@
+<h1>add-customer </h1>
+
+<form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+  <p><label for="name">Name:</label>
+    <input type="text" formControlName="name">
+    <span *ngIf="customerForm.get('name')?.invalid && customerForm.get('name')?.touched">
+      <small *ngIf="customerForm.get('name')?.errors?. ['required']">Name is required</small>
+    </span></p>
+    
+  <p><label for="email">Email:</label>
+    <input type="email" formControlName="email">
+    <span *ngIf="customerForm.get('email')?.invalid && customerForm.get('email')?.touched">
+      <small *ngIf="customerForm.get('email')?.errors?. ['required']">Email is required</small>
+      <small *ngIf="customerForm.get('email')?.errors?. ['email']">Invalid email format</small>
+    </span></p>
+    
+  <p><label for="phoneNumber">Phone Number:</label>
+    <input type="text" formControlName="phoneNumber">
+    <span *ngIf="customerForm.get('phoneNumber')?.invalid && customerForm.get('phoneNumber')?.touched">
+        <small *ngIf="customerForm.get('phoneNumber')?.errors?.['pattern']">Invalid phone number format</small>
+    </span></p>
+    
+  
+    <button type="submit" [disabled]="customerForm.invalid">Submit</button>
+  </form>
+  
+  

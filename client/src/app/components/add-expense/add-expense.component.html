@@ -1,0 +1,31 @@
+<h1>add-expense </h1>
+<form [formGroup]="expenseForm" (ngSubmit)="onSubmit()">
+  <p>
+    <label>Date:</label>
+    <input type="date" formControlName="date" required>
+  </p>
+  <p>
+    <label>Sum:</label>
+    <input type="number" formControlName="sum" required>
+  </p>
+    <p>
+    <label>Payment Method:</label>
+    <select formControlName="paymentMethod">
+      <option value="cash">Cash</option>
+      <option value="credit">Credit</option>
+      <option value="bank_transfer">Bank Transfer</option>
+    </select>
+      </p>
+    <p>
+    <label>Provider:</label>
+    <textarea formControlName="providerName"></textarea>
+    </p>
+    <p>
+      <label>Details:</label>
+      <textarea formControlName="details"></textarea>
+      </p>
+    <p>
+    <button type="submit" [disabled]="expenseForm.invalid">Submit</button>
+    </p>
+  </form>
+  

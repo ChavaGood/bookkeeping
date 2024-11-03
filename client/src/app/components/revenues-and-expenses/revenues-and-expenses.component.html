@@ -1,0 +1,38 @@
+<table >
+<caption>revenues-and-expenses</caption>
+<thead>
+    <tr>
+        <th>Number</th>
+        <th>date</th>
+        <th>provider/customer name</th>
+        <th>sum</th>
+        <th>paymentMethod</th>
+        <th>details</th>
+    </tr>
+</thead>
+<tbody>
+    <tr><td>expenses</td></tr>
+    <ng-container *ngIf="allExpenses">
+<tr  *ngFor="let expense of allExpenses,let i=index">
+<td><span [innerText]="expense.id"></span></td>
+<td><span [innerText]="expense.date"></span></td>
+<td><span [innerText]="expense.providerName"></span></td>
+<td><span [innerText]="expense.sum"></span></td>
+<td><span [innerText]="expense.paymentMethod"></span></td>
+<td><span [innerText]="expense.details"></span></td>
+</tr>
+    </ng-container>
+<tr><td>receipts</td></tr>
+<ng-container *ngIf="allExpenses">
+
+<tr *ngFor="let receipt of allReceipts,let i=index">
+    <td><span [innerText]="receipt.id"></span></td>
+    <td><span [innerText]="receipt.date"></span></td>
+    <td><span [innerText]="receipt.customer.name"></span></td>
+    <td><span [innerText]="receipt.sum"></span></td>
+    <td><span [innerText]="receipt.paymentMethod"></span></td>
+    <td><span [innerText]="receipt.details"></span></td>
+</tr>
+</ng-container>
+</tbody>
+</table>

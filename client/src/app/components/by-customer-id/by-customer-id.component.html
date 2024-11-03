@@ -1,0 +1,25 @@
+<table *ngIf="currentReceipt!==undefined">
+<!-- <caption>revenues from customer {{currentReceipt[0].customer.name}}</caption> -->
+<thead>
+    <tr>
+        <th>Number</th>
+        <th>date</th>
+        <th>customerId</th>
+        <th>sum</th>
+        <th>paymentMethod</th>
+        <th>details</th>
+    </tr>
+</thead>
+<tbody>
+    
+<tr><td><label>receipts</label></td></tr>
+<tr *ngFor="let receipt of currentReceipt,let i=index">
+    <td><span [innerText]="receipt.id"></span></td>
+    <td><span [innerText]="receipt.date"></span></td>
+    <td><span [innerText]="receipt.customer.id"></span></td>
+    <td><span [innerText]="receipt.sum"></span></td>
+    <td><span [innerText]="receipt.paymentMethod"></span></td>
+    <td><span [innerText]="receipt.details"></span></td>
+
+</tbody>
+</table>

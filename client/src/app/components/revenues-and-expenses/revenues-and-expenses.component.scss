@@ -1,0 +1,26 @@
+table{
+    min-width: 80%;
+    border-collapse: collapse;
+    font-family:  Tahoma;
+    &caption{
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    thead{
+        th{
+            text-decoration: underline 3px;
+        }
+    }
+    & tbody {
+    tr:nth-child(even){
+        background-color:lightgray;
+    }
+    tr td {
+    text-align: center;
+    span{
+        display: block;
+        padding: 3px 10px;
+    }
+    }}
+    
+    }

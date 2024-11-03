@@ -1,0 +1,36 @@
+<h1>reports</h1>
+<input type="radio" id="option1" name="options" value="byyear" [(ngModel)]="selectedOption">
+<label for="option1">by year </label><br>
+<label>     enter the year: </label>
+<input type="number"  [(ngModel)]="myYear"><br>
+<input type="radio" id="option2" name="options" value="bymonth" [(ngModel)]="selectedOption">
+<label for="option2">by month </label><br>
+<label>     enter the month: </label>
+<input type="number" [(ngModel)]="myMonth" >
+<label> enter the year: </label>
+<input type="number" [(ngModel)]="myYearMonth" (blur)="choseMonth()">
+<br>
+<input type="radio" id="option3" name="options" value="between" [(ngModel)]="selectedOption">
+<label for="option3">between dates </label><br>
+<label for="option3"> start date: </label>
+<input type="date" [(ngModel)]="date1" (blur)="choseDate1()">
+<label for="option3"> end date: </label>
+<input type="date" [(ngModel)]="date2" (blur)="choseDate2()"><br>
+
+
+<input type="radio" id="option4" name="options" value="customer" [(ngModel)]="selectedOption">
+<label for="option3">for one customer </label>
+<select [(ngModel)]="customerId">
+    <option *ngFor="let customer of allCustomers" [value]="customer.id">{{ customer.phone}}</option>
+  </select><br>
+
+  <button (click)="choose()">ok</button>
+
+
+
+  <app-revenues-and-expenses *ngIf="byYear" [year]="myYear"></app-revenues-and-expenses>
+  <app-revenues-and-expenses *ngIf="byMonth" [dates]="bindDates"></app-revenues-and-expenses>
+  <app-revenues-and-expenses *ngIf="betweenDates" [dates]="bindDates"></app-revenues-and-expenses>
+
+<app-by-customr-id *ngIf="byCustomer" [customerId]="customerId"></app-by-customr-id> 
+
