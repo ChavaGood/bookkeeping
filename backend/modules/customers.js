@@ -18,7 +18,8 @@ async function getAllCustomers(){
 async function getCustomerById (id){
     try {
         mongoConnection.Collection = 'customers'
-        const response = await mongoConnection.findOne({ filter: {customerId:id } })
+        const response = await mongoConnection.findOne({ filter: {id:id } })
+        
         if (response)
             return response
         else
